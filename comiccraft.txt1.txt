@@ -1,0 +1,49 @@
+from PIL import Image, ImageDraw, ImageFont
+
+# Comic page size
+WIDTH = 1000
+HEIGHT = 1200
+
+# Create comic page
+comic = Image.new("RGB", (WIDTH, HEIGHT), "white")
+draw = ImageDraw.Draw(comic)
+
+# Title
+draw.rectangle((0, 0, WIDTH, 100), fill="black")
+draw.text((300, 30), "LUFFY - AI PIRATE HERO", fill="white")
+
+# Panel 1
+draw.rectangle((50, 130, 950, 380), outline="black", width=5)
+draw.text((80, 160), "PANEL 1", fill="black")
+draw.text((80, 210),
+          "Luffy sails across the ocean searching for treasure!",
+          fill="black")
+
+# Panel 2
+draw.rectangle((50, 410, 950, 660), outline="black", width=5)
+draw.text((80, 440), "PANEL 2", fill="black")
+draw.text((80, 490),
+          "Luffy discovers a mysterious island.",
+          fill="black")
+
+# Panel 3
+draw.rectangle((50, 690, 950, 940), outline="black", width=5)
+draw.text((80, 720), "PANEL 3", fill="black")
+draw.text((80, 770),
+          "A glowing AI crystal appears before Luffy!",
+          fill="black")
+
+# Panel 4
+draw.rectangle((50, 970, 950, 1150), outline="black", width=5)
+draw.text((80, 1000), "PANEL 4", fill="black")
+draw.text((80, 1050),
+          "LUFFY: I will become the greatest pirate!",
+          fill="black")
+
+# Save comic
+comic.save("luffy_ai_comic.png")
+
+# Display output
+comic.show()
+
+print("ComicCraft Luffy AI Comic Created Successfully!")
